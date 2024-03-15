@@ -1,0 +1,36 @@
+<div class="navbar shadow-lg ">
+    <div class="flex-1">
+      <a href="{% url "home" %}" class="btn btn-ghost text-3xl  font-bold ">Check <span class="text-indigo-700">Inn </span></a>
+      
+    </div>
+    <div class="flex-none">
+      <ul class="menu menu-horizontal px-1">
+
+        {% if request.user.is_authenticated%}
+        <li><a href="{% url "deposite" %}" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Balace : ${{request.user.account.balance}}</a> </li>
+        {% endif %}
+
+        <li><a href="{% url "home" %}">Home</a></li>
+        <li><a href="{% url "about" %}">About</a></li>
+        <li><a href="{% url "contact_us" %}">Contact Us</a></li>
+        <li><a href="{% url "all_hotel" %}">All Hotels</a></li>
+        {% if not request.user.is_authenticated%}
+        <li><a href="{% url "registration" %}">Register</a></li>
+        <li><a href="{% url "login" %}">Login</a></li>
+        {% else %}
+        <li>
+          <details>
+            <summary class="mr-2 ">
+              Profile
+            </summary>
+            <ul class="p-2 bg-base-100 rounded-t-none shadow-lg">
+              <li><a href="{% url "deposite" %}">Deposite</a></li>
+              <li><a href="{% url "update" %}" >Profile</a></li>
+              <li><a href="{% url "logout" %}">LogOut</a></li>
+            </ul>
+          </details>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>

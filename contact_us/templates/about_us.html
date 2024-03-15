@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{%load static %}
+{% block title%}
+<title>About Us - Check Inn</title>
+{% endblock %}
+{% block content %} 
+
+<section class="text-center my-14">
+    <div class="mb-14">
+      <h1 class="text-4xl font-extrabold font-garamond mb-6 pt-12">Know About <span class="text-green-600"> Us </span> </h1>
+      
+      <hr class="border-t-2 border-gray-400 w-3/5 m-auto mb-5">
+      <p class="w-3/5 mx-auto ">There are many variations of passages of Lorem Ipsum available, but the
+        majority have suffered alteration in some form, by injected humour.</p>
+    </div>
+
+    <div class="flex flex-row gap-8 pt-4">
+
+      <!-- question container -->
+      <div class="space-y-7 w-1/2">
+        <!-- first -->
+        <div class="collapse collapse-plus text-left p-8">
+          <input type="radio" name="my-accordion-3" checked="checked" />
+          <div class="collapse-title text-2xl font-garamond font-extrabold">1. Can I cancel my reservation and get a refund??
+          </div>
+          <div class="collapse-content">
+            <p class="">Our cancellation policy varies depending on the hotel and rate you choose. Most hotels allow cancellation up to 24 hours before your arrival date for a full refund. However, some hotels may have stricter cancellation policies, so be sure to review the details during the booking process. You can find the specific cancellation policy for your chosen hotel on the confirmation page. </p>
+          </div>
+        </div>
+        
+        <!-- second -->
+        <div class="collapse collapse-plus text-left p-8">
+          <input type="radio" name="my-accordion-3"/>
+          <div class="collapse-title text-2xl font-garamond font-extrabold">2. Is it safe to book a hotel through your website?
+          </div>
+          <div class="collapse-content">
+            <p class="">Absolutely! We use secure encryption technology to protect your personal and financial information during the booking process. We do not store your full credit card details on our servers. </p>
+          </div>
+        </div>
+        
+        <!-- third -->
+        <div class="collapse collapse-plus text-left p-8">
+          <input type="radio" name="my-accordion-3"/>
+          <div class="collapse-title text-2xl font-garamond font-extrabold">3. How can I narrow down my hotel search options?
+          </div>
+          <div class="collapse-content">
+            <p class="">Our website offers a variety of filters to help you find the perfect hotel for your needs. You can filter by location, price, amenities (such as pool, spa, or fitness center), guest rating, and more. We also have curated lists of hotels based on travel style (e.g., family-friendly, luxury) to help you get started. </p>
+          </div>
+        </div>
+        
+        <!-- forth -->
+        <div class="collapse collapse-plus text-left p-8">
+          <input type="radio" name="my-accordion-3" />
+          <div class="collapse-title text-2xl font-garamond font-extrabold">4. Do I need to create an account to book a hotel?
+          </div>
+          <div class="collapse-content">
+            <p class="">No, you don't need to create an account to book a hotel on our website. However, creating an account allows you to save your preferences, manage your bookings easily, and access exclusive deals and discounts. </p>
+          </div>
+        </div>
+        
+
+
+      </div>
+      <img width="500px" height="600" src="{% static "images.jpg" %}" alt="">
+    </div>
+  </section>
+
+
+
+{% endblock %}

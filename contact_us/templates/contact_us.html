@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+{%load static %}
+{% block title %}
+<title>Contact Us </title>
+{% endblock %}
+
+{% block content %}
+
+  <!-- Contact Section -->
+  <section class="text-center container mx-auto my-14">
+    <div class="mb-14">
+      <h1 class="text-4xl font-extrabold font-garamond mb-6 pt-12">Frequently
+        Contact With Us</h1>
+      <p class="w-3/5 mx-auto ">There are many variations of passages of Lorem Ipsum available, but the
+        majority have suffered alteration in some form, by injected humour.</p>
+    </div>
+
+
+    <div class="grid grid-cols-2 gap-4">
+
+      <div class="grid grid-cols-2 gap-4 ">
+        <!-- first -->
+        <div class="px-10 py-5 bg-[#F3F3F3] rounded-lg size-72">
+          <figure>
+            <img class="mx-auto" src="{% static "./location.jpeg" %}" />
+          </figure>
+          <div class="card-body items-center text-center">
+            <h2 class="card-title text-3xl font-garamond font-extrabold">Address</h2>
+            <p class="my-6">Lorem ipsum<br> consectetur</p>
+          </div>
+        </div>
+
+        <!-- second -->
+        <div class="px-10 py-5 bg-[#F3F3F3] rounded-lg size-72">
+          <figure>
+            <img class="mx-auto" src="{% static "./phone.jpeg" %}" />
+          </figure>
+          <div class="card-body items-center text-center">
+            <h2 class="card-title text-3xl font-garamond font-extrabold">Call Us</h2>
+            <p class="my-6">Lorem ipsum<br> consectetur</p>
+          </div>
+        </div>
+
+        <!-- third -->
+        <div class="px-10 py-5 bg-[#F3F3F3] rounded-lg size-72">
+          <figure>
+            <img class="mx-auto" src="{% static "./email.jpeg" %}" />
+          </figure>
+          <div class="card-body items-center text-center">
+            <h2 class="card-title text-3xl font-garamond font-extrabold">Email Us</h2>
+            <p class="my-6">Lorem ipsum<br> consectetur</p>
+          </div>
+        </div>
+        <!-- forth -->
+        <div class="px-10 py-5 bg-[#F3F3F3] rounded-lg size-72">
+          <figure>
+            <img class="mx-auto" src="{% static "./time.jpeg" %}" />
+          </figure>
+          <div class="card-body items-center text-center">
+            <h2 class="card-title text-3xl font-garamond font-extrabold">Working Hour</h2>
+            <p class="my-6">Lorem ipsum<br> consectetur</p>
+          </div>
+        </div>
+        
+    </div>
+
+      <form method = "POST">
+        {% csrf_token %}
+        <h3 class="text-left text-xl font-bold"> Write your query </h3>
+        <hr class='my-2 '>
+        
+        {% render_field  form.name  class+=" bg-[#F3F3F3] w-full mb-4 p-6 rounded-lg" type="text" placeholder="Your Name" %}
+        
+        {% render_field form.phone class+=" bg-[#F3F3F3] w-full mb-4 p-6 rounded-lg" type="text" placeholder="Your Mobile Number" %}
+
+        {% render_field form.body class+=" bg-[#F3F3F3] w-full mb-4 p-6 rounded-lg" placeholder="Message" name="" id="" cols="30" rows="8" %}
+
+        
+        <div>
+          <button class="btn bg-green-800   text-white text-lg font-semibold w-full" type = "submit">Submit</button>
+        </div>
+      </form>
+
+    </div>
+  </section>
+
+
+
+{% endblock content %}

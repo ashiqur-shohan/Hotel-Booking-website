@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block title%}
+<title>All Hotels - Check Inn</title>
+{% endblock %}
+{% block content %} 
+
+<section class="container mx-auto">
+    <div class="flex gap-4">
+        <div class="p-2 mt-4 w-1/4">
+            <h1 class="text-xl font-bold">Locations</h1>
+
+            <label class="input input-bordered flex items-center gap-2">
+                <input type="text" class="grow" placeholder="Search" />
+              </label>
+
+            <hr class="my-4 border-1 border-black">
+            <ul class="grid grid-cols-2 gap-3">
+                <li><a class="btn w-28" href="#">Dhaka</a></li>
+                <li><a class="btn w-28" href="#">Sylhet</a></li>
+                <li><a class="btn w-28" href="#">Khulna</a></li>
+                <li><a class="btn w-28" href="#">Chittagong</a></li>
+                <li><a class="btn w-28" href="#">Cumilla</a></li>
+                <li><a class="btn w-28" href="#">Barishal</a></li>
+                
+            </ul>
+        </div>
+
+        <div class="space-y-6">
+            {% for item in data %}
+
+            <div class="hero shadow-lg my-4 rounded-lg">
+                <div class="hero-content">
+                    <img src="{{item.image.url}}"
+                        class="max-w-sm rounded-lg shadow-2xl" />
+                    <div class="flex">
+                        <div>
+                            <h1 class="text-3xl font-bold">{{item.name}}</h1>
+                            <p><b>Location:</b> {{item.location}}</p>
+                            <p class="py-6">{{item.description | truncatewords:50 }}</p>
+        
+                            <h3><b>Price:</b> {{item.price}}</h3>
+                            
+                            <a href="{% url 'hotel_details' item.id %}" class="btn mt-4 btn-primary">Details</a>
+                        </div>
+
+                        <div class="rating rating-md">
+                            <input type="radio" name="rating-7" class="mask mask-star-2 bg-orange-400" />
+                            <input type="radio" name="rating-7" class="mask mask-star-2 bg-orange-400" checked />
+                            <input type="radio" name="rating-7" class="mask mask-star-2 bg-orange-400" />
+                            <input type="radio" name="rating-7" class="mask mask-star-2 bg-orange-400" />
+                            <input type="radio" name="rating-7" class="mask mask-star-2 bg-orange-400" />
+                          </div>
+
+                    </div>
+                </div>
+            </div>
+
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+
+{% endblock %} 
